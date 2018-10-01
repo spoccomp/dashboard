@@ -1,0 +1,2 @@
+module EmailPageHelper
+end

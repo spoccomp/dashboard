@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  resources :email_page
+  resources :admin_page
+  resources :teacher_page
+  resources :student_page
+  resources :welcom
   resources :user_role
   resources :teacher
   resources :student
