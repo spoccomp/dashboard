@@ -1,12 +1,8 @@
 class Teacher < ApplicationRecord
-    create_table :teachers do |t|
-        t.username :text
-        t.password :text
-        t.first_name :text
-        t.last_name :text
-        t.age :integer
-        t.salary :money
-        t.created_at :timestamp
-        t.updated_at :timestamp
-    end
+    has_one role
+    has_one education_level
+    has_one profile
+    has_one cohort
+    has_many students
+    has_many courses
 end

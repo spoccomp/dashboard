@@ -1,13 +1,8 @@
 class Student < ApplicationRecord
-    create_table :students do |t|
-        t.username :text
-        t.password :text
-        t.first_name :text
-        t.last_name :text
-        t.age :integer
-        t.created_at :timestamp
-        t.updated_at :timestamp
-        # this is to create a foreign key
-        t.references :teachers
-    end
-end
+    has_one role
+    has_one education_level
+    has_one profile
+    belongs_to cohort
+    belongs_to teacher
+    has_many courses
+end 
