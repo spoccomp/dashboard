@@ -1,0 +1,129 @@
+rails routes
+                   Prefix Verb   URI Pattern             Controller#Action
+         email_page_index GET    /email_page(.:format)             email_page#index
+                          POST   /email_page(.:format)             email_page#create
+           new_email_page GET    /email_page/new(.:format)             email_page#new
+          edit_email_page GET    /email_page/:id/edit(.:format)             email_page#edit
+               email_page GET    /email_page/:id(.:format)             email_page#show
+                          PATCH  /email_page/:id(.:format)             email_page#update
+                          PUT    /email_page/:id(.:format)             email_page#update
+                          DELETE /email_page/:id(.:format)             email_page#destroy
+         admin_page_index GET    /admin_page(.:format)             admin_page#index
+                          POST   /admin_page(.:format)             admin_page#create
+           new_admin_page GET    /admin_page/new(.:format)             admin_page#new
+          edit_admin_page GET    /admin_page/:id/edit(.:format)             admin_page#edit
+               admin_page GET    /admin_page/:id(.:format)             admin_page#show
+                          PATCH  /admin_page/:id(.:format)             admin_page#update
+                          PUT    /admin_page/:id(.:format)             admin_page#update
+                          DELETE /admin_page/:id(.:format)             admin_page#destroy
+       teacher_page_index GET    /teacher_page(.:format)             teacher_page#index
+                          POST   /teacher_page(.:format)             teacher_page#create
+         new_teacher_page GET    /teacher_page/new(.:format)             teacher_page#new
+        edit_teacher_page GET    /teacher_page/:id/edit(.:format)             teacher_page#edit
+             teacher_page GET    /teacher_page/:id(.:format)             teacher_page#show
+                          PATCH  /teacher_page/:id(.:format)             teacher_page#update
+                          PUT    /teacher_page/:id(.:format)             teacher_page#update
+                          DELETE /teacher_page/:id(.:format)             teacher_page#destroy
+       student_page_index GET    /student_page(.:format)             student_page#index
+                          POST   /student_page(.:format)             student_page#create
+         new_student_page GET    /student_page/new(.:format)             student_page#new
+        edit_student_page GET    /student_page/:id/edit(.:format)             student_page#edit
+             student_page GET    /student_page/:id(.:format)             student_page#show
+                          PATCH  /student_page/:id(.:format)             student_page#update
+                          PUT    /student_page/:id(.:format)             student_page#update
+                          DELETE /student_page/:id(.:format)             student_page#destroy
+             welcom_index GET    /welcom(.:format)             welcom#index
+                          POST   /welcom(.:format)             welcom#create
+               new_welcom GET    /welcom/new(.:format)             welcom#new
+              edit_welcom GET    /welcom/:id/edit(.:format)             welcom#edit
+                   welcom GET    /welcom/:id(.:format)             welcom#show
+                          PATCH  /welcom/:id(.:format)             welcom#update
+                          PUT    /welcom/:id(.:format)             welcom#update
+                          DELETE /welcom/:id(.:format)             welcom#destroy
+          user_role_index GET    /user_role(.:format)             user_role#index
+                          POST   /user_role(.:format)             user_role#create
+            new_user_role GET    /user_role/new(.:format)             user_role#new
+           edit_user_role GET    /user_role/:id/edit(.:format)             user_role#edit
+                user_role GET    /user_role/:id(.:format)             user_role#show
+                          PATCH  /user_role/:id(.:format)             user_role#update
+                          PUT    /user_role/:id(.:format)             user_role#update
+                          DELETE /user_role/:id(.:format)             user_role#destroy
+            teacher_index GET    /teacher(.:format)             teacher#index
+                          POST   /teacher(.:format)             teacher#create
+              new_teacher GET    /teacher/new(.:format)             teacher#new
+             edit_teacher GET    /teacher/:id/edit(.:format)             teacher#edit
+                  teacher GET    /teacher/:id(.:format)             teacher#show
+                          PATCH  /teacher/:id(.:format)             teacher#update
+                          PUT    /teacher/:id(.:format)             teacher#update
+                          DELETE /teacher/:id(.:format)             teacher#destroy
+            student_index GET    /student(.:format)             student#index
+                          POST   /student(.:format)             student#create
+              new_student GET    /student/new(.:format)             student#new
+             edit_student GET    /student/:id/edit(.:format)             student#edit
+                  student GET    /student/:id(.:format)             student#show
+                          PATCH  /student/:id(.:format)             student#update
+                          PUT    /student/:id(.:format)             student#update
+                          DELETE /student/:id(.:format)             student#destroy
+               role_index GET    /role(.:format)             role#index
+                          POST   /role(.:format)             role#create
+                 new_role GET    /role/new(.:format)             role#new
+                edit_role GET    /role/:id/edit(.:format)             role#edit
+                     role GET    /role/:id(.:format)             role#show
+                          PATCH  /role/:id(.:format)             role#update
+                          PUT    /role/:id(.:format)             role#update
+                          DELETE /role/:id(.:format)             role#destroy
+            profile_index GET    /profile(.:format)             profile#index
+                          POST   /profile(.:format)             profile#create
+              new_profile GET    /profile/new(.:format)             profile#new
+             edit_profile GET    /profile/:id/edit(.:format)             profile#edit
+                  profile GET    /profile/:id(.:format)             profile#show
+                          PATCH  /profile/:id(.:format)             profile#update
+                          PUT    /profile/:id(.:format)             profile#update
+                          DELETE /profile/:id(.:format)             profile#destroy
+         permission_index GET    /permission(.:format)             permission#index
+                          POST   /permission(.:format)             permission#create
+           new_permission GET    /permission/new(.:format)             permission#new
+          edit_permission GET    /permission/:id/edit(.:format)             permission#edit
+               permission GET    /permission/:id(.:format)             permission#show
+                          PATCH  /permission/:id(.:format)             permission#update
+                          PUT    /permission/:id(.:format)             permission#update
+                          DELETE /permission/:id(.:format)             permission#destroy
+  educational_level_index GET    /educational_level(.:format)             educational_level#index
+                          POST   /educational_level(.:format)             educational_level#create
+    new_educational_level GET    /educational_level/new(.:format)             educational_level#new
+   edit_educational_level GET    /educational_level/:id/edit(.:format)             educational_level#edit
+        educational_level GET    /educational_level/:id(.:format)             educational_level#show
+                          PATCH  /educational_level/:id(.:format)             educational_level#update
+                          PUT    /educational_level/:id(.:format)             educational_level#update
+                          DELETE /educational_level/:id(.:format)             educational_level#destroy
+             course_index GET    /course(.:format)             course#index
+                          POST   /course(.:format)             course#create
+               new_course GET    /course/new(.:format)             course#new
+              edit_course GET    /course/:id/edit(.:format)             course#edit
+                   course GET    /course/:id(.:format)             course#show
+                          PATCH  /course/:id(.:format)             course#update
+                          PUT    /course/:id(.:format)             course#update
+                          DELETE /course/:id(.:format)             course#destroy
+             cohort_index GET    /cohort(.:format)             cohort#index
+                          POST   /cohort(.:format)             cohort#create
+               new_cohort GET    /cohort/new(.:format)             cohort#new
+              edit_cohort GET    /cohort/:id/edit(.:format)             cohort#edit
+                   cohort GET    /cohort/:id(.:format)             cohort#show
+                          PATCH  /cohort/:id(.:format)             cohort#update
+                          PUT    /cohort/:id(.:format)             cohort#update
+                          DELETE /cohort/:id(.:format)             cohort#destroy
+      administrator_index GET    /administrator(.:format)             administrator#index
+                          POST   /administrator(.:format)             administrator#create
+        new_administrator GET    /administrator/new(.:format)             administrator#new
+       edit_administrator GET    /administrator/:id/edit(.:format)             administrator#edit
+            administrator GET    /administrator/:id(.:format)             administrator#show
+                          PATCH  /administrator/:id(.:format)             administrator#update
+                          PUT    /administrator/:id(.:format)             administrator#update
+                          DELETE /administrator/:id(.:format)             administrator#destroy
+                     root GET    /             welcom#index
+       rails_service_blob GET    /rails/active_storage/blobs/:signed_id/*filename(.:format)             active_storage/blobs#show
+rails_blob_representation GET    /rails/active_storage/representations/:signed_blob_id/:variation_key/*filename(.:format) active_storage/representations#show
+       rails_disk_service GET    /rails/active_storage/disk/:encoded_key/*filename(.:format)             active_storage/disk#show
+update_rails_disk_service PUT    /rails/active_storage/disk/:encoded_token(.:format)             active_storage/disk#update
+     rails_direct_uploads POST   /rails/active_storage/direct_uploads(.:format)             active_storage/direct_uploads#create
+[13:51:52] (master) pam_dashboard
