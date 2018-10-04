@@ -1,0 +1,21 @@
+<h1>List of Teachers</h1>
+<% if @teachers.blank? %>
+<p> There are no teachers currently in the system.</p>
+<% else %>
+<% @teachers.each do |teacher|%>
+<tr>
+    <td> <%= teacher.id%> </td>
+    <td> <%= teacher.username%> </td>
+    <td> <%= teacher.first_name%> </td>
+    <td> <%= teacher.last_name%> </td>
+    <td> <%= teacher.age%> </td>
+    <td> <%= teacher.salary%> </td>
+    <td> <%= teacher.edu_level%> </td>
+    <td><%= link_to 'Edit', edit_teacher_path(teacher.id) %></td>
+    <td><%= link_to 'Destroy', teacher_path(teacher.id),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td><br>
+</tr>
+<% end %>
+<% end %>
+<%= link_to 'Dashboard', admin_pages_path(@teachers) %>

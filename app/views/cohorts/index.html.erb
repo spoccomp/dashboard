@@ -1,0 +1,44 @@
+<h1 class="d-flex justify-content-center">Cohort Dashboard</h1>
+
+
+<h3 class="d-flex justify-content-center">Administrator</h1>
+<h4 class="d-flex justify-content-center">THE NAME OF THE ADMINISTRATOR GOES HERE</h4>
+
+
+
+<div class="container">
+  <div class="row">
+   <ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link " href="/cohorts/new">Create</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Update</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">View</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link " href="#">Delete</a>
+  </li>
+</ul>
+
+
+<h1>Cohort Listing</h1>
+ 
+<table>
+  <tr>
+    <th>Cohort Name</th>
+    <th>Start Date</th>
+    <th>End Date</th>
+  </tr>
+ 
+  <% @cohort.each do |cohort| %>
+    <tr>
+      <td><%= cohort.cohort_name %></td>
+      <td><%= cohort.cohort_start_date %></td>
+      <td><%= cohort.cohort_end_date %></td>
+      <%# <td><%= link_to 'Show', article_path(article) %></td> %>
+    </tr>
+  <% end %>
+</table>

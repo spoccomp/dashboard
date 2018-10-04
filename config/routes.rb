@@ -1,19 +1,21 @@
 Rails.application.routes.draw do
-  resources :email_page
-  resources :admin_page
-  resources :teacher_page
-  resources :student_page
-  resources :welcom
-  resources :user_role
-  resources :teacher
-  resources :student
-  resources :role
-  resources :profile
-  resources :permission
-  resources :educational_level
-  resources :course
-  resources :cohort
-  resources :administrator
-  root 'welcom#index'
+  resources :email_pages
+  resources :admin_pages
+  resources :teacher_pages
+  resources :student_pages
+  resources :welcoms
+  resources :user_roles
+  resources :teachers
+  # get 'controllerName/method or action'
+  get 'change' => 'teachers#change'
+  resources :students
+  resources :roles
+  resources :profiles
+  resources :permissions
+  resources :educational_levels
+  resources :courses
+  resources :cohorts
+  resources :administrators
+  root 'welcoms#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
