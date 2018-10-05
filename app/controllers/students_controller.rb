@@ -1,25 +1,31 @@
 class StudentsController < ApplicationController
     def index
-        @student = Student.all
+        @students = Student.all
       end
     
+      # def change
+      #   @student = Student.all
+      # end
+
+      def show
+        @student = Student.find(params[:id])
+      end
+
+      def new
+        @student = Student.new
+      end
+
       def create
         @student = Student.new(student_params)
+        puts @student.inspect
         if @student.save
-          redirect_to student_path
+          redirect_to students_path
         else
+          puts @student.errors.messages.join(', ')
           render "new"
         end
       end
        
-      def new
-        @student = Student.new
-      end
-    
-      def show
-        @student = Student.find(params[:id])
-      end
-    
       def edit
         @student = Student.find(params[:id])
       end

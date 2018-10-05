@@ -2,3 +2,11 @@
 <p>Find me in app/views/student/show.html.erb</p>
 
 
+ <td> <%= @student.id%> </td>
+    <td> <%= @student.username%> </td>
+    <td> <%= @student.first_name%> </td>
+    <td> <%= @student.last_name%> </td>
+    <td> <%= @student.age%> </td>
+    <td> <%= @student.edu_level%> </td><br><br>
+
+    <%= link_to 'Dashboard', admin_pages_path(@students) %>

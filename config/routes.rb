@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   # get 'controllerName/method or action'
   get 'change' => 'teachers#change'
   resources :students
+  # get 'changeS' => 'students#change'
   resources :roles
   resources :profiles
   resources :permissions

@@ -4,10 +4,7 @@
 
 
 
-<%= form_with scope: :student, model: @students local: true do |form| %>
-  
-
-  
+<%= form_with scope: :student, model: @student, local: true do |form| %>
   <div>
     <%= form.label :username %><br>
     <%= form.text_field :username %>
