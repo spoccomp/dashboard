@@ -17,7 +17,7 @@ class StudentsController < ApplicationController
         if @student.save
           redirect_to students_path
         else
-          puts @student.errors.messages.join(', ')
+          puts @student.errors.messages.join(',')
           render "new"
         end
       end

@@ -3,23 +3,24 @@ class CohortsController < ApplicationController
     @cohort = Cohort.all
   end
 
-  def create
-    @cohort = Cohort.new(cohort_params)
- 
-   if @cohort.save
-    redirect_to cohorts_path
-   else
-    render 'new'
-  end
-   
-  def new
-    @cohort = Cohort.new
-  end
-
   def show
     @cohort = Cohort.find(params[:id])
   end
 
+  def new
+    @cohort = Cohort.new
+  end
+
+  def create
+    @cohort = Cohort.new(cohort_params)
+    puts @cohort.inspect
+   if @cohort.save
+    redirect_to cohorts_path
+   else
+    render 'new'
+   end
+  end
+   
   def edit
     @cohort = Cohort.find(params[:id])
   end

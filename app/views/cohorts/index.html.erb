@@ -10,35 +10,27 @@
   <div class="row">
    <ul class="nav nav-tabs">
   <li class="nav-item">
-    <a class="nav-link " href="/cohorts/new">Create</a>
+    <p class="nav-link "> <%= link_to "Create", new_cohort_path %></p>
   </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#">Update</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#">View</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link " href="#">Delete</a>
-  </li>
-</ul>
+  </ul>
+  </div>
+ </div>
 
-
+<% if @cohort.blank? %>
+<p> There are no cohorts currently in the system.</p>
 <h1>Cohort Listing</h1>
- 
-<table>
-  <tr>
-    <th>Cohort Name</th>
-    <th>Start Date</th>
-    <th>End Date</th>
-  </tr>
- 
+ <% else %>
+<table> 
   <% @cohort.each do |cohort| %>
     <tr>
       <td><%= cohort.cohort_name %></td>
       <td><%= cohort.cohort_start_date %></td>
       <td><%= cohort.cohort_end_date %></td>
-      <%# <td><%= link_to 'Show', article_path(article) %></td> %>
+      <td><%= link_to 'Edit', edit_cohort_path(cohort.id) %></td>
+      <td><%= link_to 'Destroy', cohort_path(cohort.id),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td><br>
     </tr>
+  <% end %>
   <% end %>
 </table>

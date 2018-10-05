@@ -2,37 +2,24 @@
 <p>Find me in app/views/cohort/new.html.erb</p>
 
 
-<%= form_with scope: :cohort, model: @cohort local: true do |form| %>
+<%= form_with scope: :cohort, model: @cohort, local: true do |form| %>
   
-   <% if @cohort.errors.any? %>
-    <div id="error_explanation">
-      <h2>
-        <%= pluralize(@cohort.errors.count, "error") %> prohibited
-        this article from being saved:
-      </h2>
-      <ul>
-        <% @cohort.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-  
-  <p>
+<div>
     <%= form.label :cohort_name %><br>
     <%= form.text_field :cohort_name %>
-  </p>
+</div>
  
-  <p>
+<div>
     <%= form.label :cohort_start_date %><br>
-     <%= form.text_field :cohort_start_date%>
-  </p>
+    <%= form.text_field :cohort_start_date%>
+</div>
  
- <p>
+ <div>
     <%= form.label :cohort_end_date%><br>
      <%= form.text_field :cohort_end_date%>
-  </p>
-  <p>
+</div>
+
+  <div>
     <%= form.submit %>
-  </p>
-<% end %>
+  </div>
+<%end%>

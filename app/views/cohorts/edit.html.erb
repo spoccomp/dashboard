@@ -1,2 +1,27 @@
 <h1>Cohort#edit</h1>
 <p>Find me in app/views/cohort/edit.html.erb</p>
+
+
+
+<%= form_with scope: :cohort, model: @cohort, local: true do |form| %>
+  
+  <div>
+    <%= form.label :cohort_name %><br>
+    <%= form.text_field :cohort_name %>
+  </div>
+ 
+  <div>
+    <%= form.label :cohort_start_date %><br>
+     <%= form.text_field :cohort_start_date%>
+  </div>
+ 
+ <div>
+    <%= form.label :cohort_end_date%><br>
+     <%= form.text_field :cohort_end_date%>
+  </div>
+  <div>
+    <%= form.submit %>
+  </div>
+<%end%>
+
+<%= link_to 'Dashboard', admin_pages_path(@cohorts) %>

@@ -17,9 +17,11 @@ class TeachersController < ApplicationController
 
   def create
     @teacher= Teacher.new(teacher_params)
+    puts @teacher.inspect
     if @teacher.save
       redirect_to teachers_path
     else
+      # puts @teacher.errors.messages.join(',')
       render "new"
   end
 end
