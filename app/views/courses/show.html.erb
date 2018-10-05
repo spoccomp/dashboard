@@ -1,3 +1,9 @@
 <h1>Course#show</h1>
 <p>Find me in app/views/course/show.html.erb</p>
 
+ <td> <%= @course.id%> </td>
+    <td> <%= @course.course_name%> </td>
+    <td> <%= @course.course_hours%> </td>
+    <br><br>
+
+    <%= link_to 'Dashboard', admin_pages_path(@course) %>

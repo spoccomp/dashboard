@@ -2,33 +2,18 @@
 <p>Find me in app/views/course/new.html.erb</p>
 
 
-
-<%= form_with scope: :course, model: @course local: true do |form| %>
-  
-   <% if @course.errors.any? %>
-    <div id="error_explanation">
-      <h2>
-        <%= pluralize(@course.errors.count, "error") %> prohibited
-        this article from being saved:
-      </h2>
-      <ul>
-        <% @course.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-  
-  <p>
+<%= form_with scope: :course, model: @course, local: true do |form| %>
+  <div>
     <%= form.label :course_name %><br>
-    <%= form.text_field :course_name %>
-  </p>
+    <%= form.text_field :course_name  %>
+  </div>
  
-  <p>
-    <%= form.label :course_hours %><br>
+  <div>
+    <%= form.label :course_hours  %><br>
      <%= form.text_field :course_hours%>
-  </p>
-  <p>
+  </div>
+  
+  <div>
     <%= form.submit %>
-  </p>
+  </div>
 <% end %>

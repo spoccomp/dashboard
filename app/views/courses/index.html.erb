@@ -5,20 +5,28 @@
 <h4 class="d-flex justify-content-center">THE NAME OF THE ADMINISTRATOR GOES HERE</h4>
 
 
-
 <div class="container">
   <div class="row">
    <ul class="nav nav-tabs">
-  <li class="nav-item">
-    <a class="nav-link " href="#">Create</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#">Update</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#">View</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link " href="#">Delete</a>
-  </li>
-</ul>
+      <li class="nav-item">
+        <p class="nav-link "> <%= link_to "Create", new_course_path %></p>
+      </li> 
+  </ul>
+  </div>
+</div>
+<h1>List of Courses</h1>
+<% if @courses.blank? %>
+<p> There are no teachers currently in the system.</p>
+<% else %>
+<% @courses.each do |course|%>
+<tr>
+    <td> <%= course.id%> </td>
+    <td> <%= course.course_name%> </td>
+    <td> <%= course.course_hours%> </td>
+    <td><%= link_to 'Edit', edit_course_path(course.id) %></td>
+    <td><%= link_to 'Destroy', course_path(course.id),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td><br>
+</tr>
+<% end %>
+<% end %>

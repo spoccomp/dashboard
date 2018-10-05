@@ -1,34 +1,39 @@
 class CoursesController < ApplicationController
+  
   def index
-    @course = Course.all
-  end
-
-  def create
-    @course = Course.new(course_params)
-    if @course.save
-      redirect_to course_path
-    else
-      render "new"
-  end
-   
-  def new
-    @course = Course.new
+    @courses = Course.all
   end
 
   def show
     @course = Course.find(params[:id])
   end
 
+  def new
+    @course = Course.new
+  end
+
+  def create
+    @course = Course.new(course_params)
+    puts @course.inspect
+    if @course.save
+      redirect_to courses_path
+    else
+      puts @course.errors.messages.join(',')
+      render "new"
+    end
+  end
+   
   def edit
     @course = Course.find(params[:id])
   end
 
   def update
     @course = Course.find(params[:id])
- 
+    puts @course.inspect
     if @course.update(course_params)
       redirect_to @course
     else
+      puts @course.errors.messages.join(',')
       render 'new'
     end
   end

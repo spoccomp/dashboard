@@ -1,2 +1,18 @@
 <h1>Course#edit</h1>
 <p>Find me in app/views/course/edit.html.erb</p>
+
+<%= form_with scope: :course, model: @course, local: true do |form| %>
+  <div>
+    <%= form.label :course_name %><br>
+    <%= form.text_field :course_name  %>
+  </div>
+ 
+  <div>
+    <%= form.label :course_hours  %><br>
+     <%= form.text_field :course_hours%>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
