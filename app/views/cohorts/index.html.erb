@@ -17,15 +17,20 @@
  </div>
 
 <% if @cohort.blank? %>
-<p> There are no cohorts currently in the system.</p>
-<h1>Cohort Listing</h1>
+  <p> There are no cohorts currently in the system.</p>
  <% else %>
+ <div>
+ <h1>Cohort Listing</h1>
+ <p>There are <%=@cohort_size%> cohorts listed below:</p>
 <table> 
   <% @cohort.each do |cohort| %>
     <tr>
       <td><%= cohort.cohort_name %></td>
       <td><%= cohort.cohort_start_date %></td>
       <td><%= cohort.cohort_end_date %></td>
+      <td><%= cohort.courses_id %></td>
+      <td><%= cohort.teachers_id %></td>
+      <td><%= cohort.students_id %></td>
       <td><%= link_to 'Edit', edit_cohort_path(cohort.id) %></td>
       <td><%= link_to 'Destroy', cohort_path(cohort.id),
               method: :delete,
@@ -34,3 +39,4 @@
   <% end %>
   <% end %>
 </table>
+</div>

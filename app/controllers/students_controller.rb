@@ -9,6 +9,8 @@ class StudentsController < ApplicationController
 
       def new
         @student = Student.new
+        # @edu= Education.all.map{ |e| [ e.education, e.id]}
+        # @edu = Education.all
       end
 
       def create
@@ -17,7 +19,7 @@ class StudentsController < ApplicationController
         if @student.save
           redirect_to students_path
         else
-          puts @student.errors.messages.join(',')
+          # puts @student.errors.messages.join(',')
           render "new"
         end
       end
@@ -37,7 +39,7 @@ class StudentsController < ApplicationController
       end
     
       def destroy
-        @student = Student.fine(params[:id])
+        @student = Student.find(params[:id])
         @student.destroy
         redirect_to students_path
       end
@@ -45,7 +47,7 @@ class StudentsController < ApplicationController
       private
         def student_params
           params.require(:student).permit(:username , :password, :first_name, :last_name,
-          :age, :edu_level)
+          :age, :education)
         end
     
     end

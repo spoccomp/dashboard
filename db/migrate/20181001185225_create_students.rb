@@ -6,11 +6,11 @@ class CreateStudents < ActiveRecord::Migration[5.2]
         t.text :first_name 
         t.text :last_name 
         t.integer :age 
-        t.text :edu_level 
+        t.references :educations
         t.timestamp :created_at 
         t.timestamp :updated_at 
         # this is to create a foreign key
-        t.references :teachers
+        # t.references :teachers
     end
   end
 end

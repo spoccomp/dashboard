@@ -13,7 +13,6 @@ Rails.application.routes.draw do
   resources :roles
   resources :profiles
   resources :permissions
-  resources :educational_levels
   resources :courses
   resources :cohorts
   resources :administrators

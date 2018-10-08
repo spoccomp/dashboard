@@ -18,4 +18,19 @@
   <strong>End Date:</strong>
   <%= @cohort.cohort_end_date %>
 </div>
+<div>
+  <strong>Course:</strong>
+  <%= @cohort.courses_id%>
+</div>
+<div>
+  <strong>Teacher:</strong>
+  <%= @cohort.teachers_id %> 
+  <%# <%= @teacher.first_name %> 
+  <%# <%= @teacher.last_name %> 
+</div>
+<div>
+  <strong>Student:</strong>
+  <%= @cohort.students_id %>
+</div>
 
+<%= link_to 'Dashboard', admin_pages_path(@cohort) %>

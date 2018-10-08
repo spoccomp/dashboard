@@ -11,13 +11,39 @@
  
 <div>
     <%= form.label :cohort_start_date %><br>
-    <%= form.text_field :cohort_start_date%>
+    <%= form.date_field :cohort_start_date%>
 </div>
  
  <div>
     <%= form.label :cohort_end_date%><br>
-     <%= form.text_field :cohort_end_date%>
+     <%= form.date_field :cohort_end_date%>
 </div>
+
+<div>
+<p class="form-control input-sm selectpicker"><%= form.label :courses_id %>
+<%= form.select(:courses_id, @course)%></p>
+  <%# <%= form.collection_select(:course, :courses_id, @course, :id, :course_name, :prompt => true) %> 
+
+<p class="form-control input-sm selectpicker"><%= form.label :teachers_id %>
+<%= form.select(:teachers_id,  @teacher)%></p>
+
+<%# <%= form.collection_select(:teachers, :teachers_id, @teacher, :id, :last_name, :prompt => true) %>
+
+<p><%= form.label :students_id %>
+<select name="students_id[]" multiple >
+  <%= @student.each do |student| %>
+    <option value="<%= student.id%>"><%= student.first_name%> <%=student.last_name %></option>
+  <% end %>
+</select>
+ <%# <%= form.collection_select(:students_id, @student)%> 
+     <%# <%= collection_select(:students_id, Student.all, :students_id, :name, {:name => 'students_id[]'}, { multiple: true}, ) %> 
+
+    <%# <%= form.collection_check_boxes(:student, :students_id, Student.all, :id, :name, {:name => 'students_id[]'}) %>
+    
+
+<%# <%= form.select :students_id, @student %> 
+<%# <%= form.collection_select :students, :students_id, Student.all, :id,  {multiple: true} %> 
+<br/>
 
   <div>
     <%= form.submit %>

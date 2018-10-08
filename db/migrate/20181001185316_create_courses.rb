@@ -6,8 +6,8 @@ class CreateCourses < ActiveRecord::Migration[5.2]
       t.timestamp :created_at 
       t.timestamp :updated_at 
       # this is to create a foreign key
-      t.references :teachers
-      t.references :students
+      # t.references :teachers
+      # t.references :students
       
     end
   end

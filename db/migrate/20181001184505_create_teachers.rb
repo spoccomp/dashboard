@@ -7,7 +7,7 @@ class CreateTeachers < ActiveRecord::Migration[5.2]
       t.text :last_name 
       t.integer :age 
       t.money :salary 
-      t.text :edu_level 
+      t.references :educations
       t.timestamp :created_at 
       t.timestamp :updated_at 
     end
