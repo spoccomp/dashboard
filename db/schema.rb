@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_07_050547) do
+ActiveRecord::Schema.define(version: 2018_10_10_212654) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,14 @@ ActiveRecord::Schema.define(version: 2018_10_07_050547) do
     t.text "admin_password"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "admins", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.string "password_digest"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "cohort_students", force: :cascade do |t|
@@ -39,7 +47,7 @@ ActiveRecord::Schema.define(version: 2018_10_07_050547) do
     t.datetime "updated_at"
     t.integer "courses_id", limit: 2
     t.integer "teachers_id", limit: 2
-    t.integer "students_id", limit: 2
+    t.integer "class_size"
   end
 
   create_table "courses", force: :cascade do |t|
@@ -85,7 +93,8 @@ ActiveRecord::Schema.define(version: 2018_10_07_050547) do
     t.integer "age"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer "education_id", limit: 2
+    t.text "education"
+    t.integer "cohort_id", limit: 2
   end
 
   create_table "teachers", force: :cascade do |t|
@@ -115,8 +124,7 @@ ActiveRecord::Schema.define(version: 2018_10_07_050547) do
 
   add_foreign_key "cohort_students", "cohorts"
   add_foreign_key "cohort_students", "students"
-  add_foreign_key "cohorts", "courses", column: "courses_id", name: "cohorts_courses_id_fkey", on_update: :cascade
-  add_foreign_key "cohorts", "students", column: "students_id", name: "cohorts_students_id_fkey", on_update: :cascade, on_delete: :cascade
-  add_foreign_key "cohorts", "teachers", column: "teachers_id", name: "cohorts_teachers_id_fkey", on_update: :cascade
-  add_foreign_key "students", "educations", name: "students_edu_level_fkey", on_update: :cascade, on_delete: :cascade
+  add_foreign_key "cohorts", "courses", column: "courses_id", name: "cohorts_courses_id_fkey"
+  add_foreign_key "cohorts", "teachers", column: "teachers_id", name: "cohorts_teachers_id_fkey"
+  add_foreign_key "students", "cohorts", name: "students_cohort_id_fkey"
 end

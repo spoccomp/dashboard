@@ -3,7 +3,7 @@
 
 
  <%= form_with scope: :cohort, model: @cohort, local: true do |form| %>
-  
+  <p>Cohort - ID: <%=@cohort.id%></p>
 <div>
     <%= form.label :cohort_name %><br>
     <%= form.text_field :cohort_name %>
@@ -33,9 +33,9 @@
 
 
 <p><%= form.label :students_id %>
-<select name="students_id[]" multiple >
-  <%= @student.each do |student| %>
-    <option value="<%= student.id%>"><%= student.first_name%> <%=student.last_name %></option>
+<select name= "students_id[]" multiple >
+  <%= @student.each do |stu| %>
+  <option value="<%= stu.id%>"> <%= stu.first_name %> <%=stu.last_name %></option>     
   <% end %>
 </select>
 <%# <%= collection_select(:students, :students_id, @student, :id, :last_name, {:prompt => false}, {:multiple => true}) %> </p>  
