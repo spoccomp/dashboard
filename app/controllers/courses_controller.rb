@@ -18,7 +18,7 @@ class CoursesController < ApplicationController
     if @course.save
       redirect_to courses_path
     else
-      puts @course.errors.messages.join(',')
+      # puts @course.errors.messages.join(',')
       render "new"
     end
   end
@@ -33,7 +33,7 @@ class CoursesController < ApplicationController
     if @course.update(course_params)
       redirect_to @course
     else
-      puts @course.errors.messages.join(',')
+      # puts @course.errors.messages.join(',')
       render 'new'
     end
   end

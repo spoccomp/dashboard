@@ -20,9 +20,9 @@
 <% else %>
 <% @courses.each do |course|%>
 <tr>
-    <td> <%= course.id%> </td>
-    <td> <%= course.course_name%> </td>
-    <td> <%= course.course_hours%> </td>
+    <td>Course-ID: <%= course.id%> </td>
+    <td>Course Name: <%= course.course_name%> </td>
+    <td>Course Hours: <%= course.course_hours%> </td>
     <td><%= link_to 'Edit', edit_course_path(course.id) %></td>
     <td><%= link_to 'Destroy', course_path(course.id),
               method: :delete,

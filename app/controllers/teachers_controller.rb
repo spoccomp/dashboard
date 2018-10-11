@@ -51,7 +51,7 @@ end
   private
     def teacher_params
       params.require(:teacher).permit(:username , :password, :first_name, :last_name,
-      :age, :salary, :edu_level)
+      :age, :salary, :education)
     end
 
 end

@@ -10,6 +10,7 @@
  
   <div>
     <%= form.label :course_hours  %><br>
+     <%= @course.errors.full_messages_for(:course_hours) if @course.errors.include?(:course_hours) %>
      <%= form.text_field :course_hours%>
   </div>
   

@@ -104,7 +104,7 @@ ActiveRecord::Schema.define(version: 2018_10_10_212654) do
     t.text "last_name"
     t.integer "age"
     t.money "salary", scale: 2
-    t.text "edu_level"
+    t.text "education"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

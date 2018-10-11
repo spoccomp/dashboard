@@ -7,10 +7,7 @@ class Teacher < ApplicationRecord
     belongs_to :cohort, optional: true
 
     validates_presence_of :username, :password, :first_name, :last_name, :age, :salary, :education
-    # validates_numericality_of :salary, :message=>"Error Message - Enter your Salary"
-    validates :salary, numericality: { less_than: 0}
-    # , message: "Error Message - Enter your Salary greater than $0"
-    validates :age, numericality: { only_integer: true, greater_than: 0, less_than: 150}
-    # , message: "Error Message - Enter your age"
-    # validates_numericality_of :age, :message=>"Error Message - Enter your Age"
+    validates :age, numericality: { only_integer: true, greater_than: 0, less_than: 150, message: "Listen sucka, you ain't older than 150 years old. So make it right!"}
+    validates :salary, numericality: { greater_than: 0, message: "Please enter an amount greater than %{value} dollars, Sucka!"}
+    
 end
