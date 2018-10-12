@@ -7,6 +7,9 @@ class CohortsController < ApplicationController
 
   def show
     @cohort = Cohort.find(params[:id])
+    cohortID = params[:id]
+    @theCohort = CohortStudent.where(cohort_id:cohortID)
+    @classSize = @theCohort.size
     @course = Course.all
     # @teacher = Teacher.find(params[:teachers_id]).map{ |t| [t.first_name + t.last_name, t.id]}
     @student = Student.all
@@ -25,24 +28,22 @@ class CohortsController < ApplicationController
 
   def create
     @cohort = Cohort.new(cohort_params)
-   
-     
-    cohortID = params[:id]
-    puts "Cohort-ID #{cohortID}"
+    # cohortID = params[:id]
+    # puts "Cohort-ID #{cohortID}"
     # stores student array below from form
-    studentID = params[:students_id]
-    puts studentID.class
-      puts "Student_ID #{studentID}"
-      changeToNum = studentID.map {|num| num.to_i}
-      puts "Student_ID #{changeToNum}"
-      @cs = CohortStudent.new
-      changeToNum.each do |cS|
-        @cs.cohort_id = cohortID
-        @cs.student_id = cS
-        puts @cs.student_id = cS
-        @cs.save
-        puts @cs.inspect
-      end
+    # studentID = params[:students_id]
+    # puts studentID.class
+    #   puts "Student_ID #{studentID}"
+    #   changeToNum = studentID.map {|num| num.to_i}
+    #   puts "Student_ID #{changeToNum}"
+    #   @cs = CohortStudent.new
+    #   changeToNum.each do |cS|
+    #     @cs.cohort_id = cohortID
+    #     @cs.student_id = cS
+    #     puts @cs.student_id = cS
+    #     @cs.save
+    #     puts @cs.inspect
+    #   end
     # @coh_stu = CohortStudent.new({cohort_id: studentID, student_id: cohortID})
     
     puts @cohort.inspect
@@ -88,17 +89,6 @@ class CohortsController < ApplicationController
         end
         
     if @cohort.update(cohort_params) 
-      #  @cs.update({
-      #   @cs = CohortStudent.new
-      #   changeToNum.each do |cS|
-      #     # @cs = CohortStudent.new
-      #     @cs.cohort_id = cohortID
-      #     @cs.student_id = cS
-      #     # puts @cs.student_id = cS
-      #     @cs.save
-      #     # puts @cs.inspect
-      #   end
-      #  })
       redirect_to @cohort
     else
       render 'index'
@@ -108,7 +98,13 @@ class CohortsController < ApplicationController
   def destroy
     @cohort = Cohort.find(params[:id])
     @cohort.destroy
+    #whats the point!
+    # respond_to do |format|
+    #   format.html {render redirect_to cohorts_path}
+    #   format.js { render '/cohorts/index.js.erb'}
+    # end
     redirect_to cohorts_path
+    # redirect_to @cohort
   end
 
   private

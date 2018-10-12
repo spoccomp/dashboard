@@ -27,23 +27,7 @@
 <p class="form-control input-sm selectpicker"><%= form.label :teachers_id %>
 <%= form.select(:teachers_id,  @teacher)%></p>
 
-<%# <%= form.collection_select(:teachers, :teachers_id, @teacher, :id, :last_name, :prompt => true) %>
 
-<p><%= form.label :students_id %>
-<%# <%= form.select(:students, :students_id, @student, {prompt: 'Select Person'})%> 
-<select name= "students_id[]" multiple >
-  <%= @student.each do |student| %>
-  <option value="<%= student.id%>"> <%= student.first_name %> <%=student.last_name %></option>     
-  <% end %>
-</select>
- <%# <%= form.collection_select(:students_id, @student)%> 
-     <%# <%= collection_select(:students_id, Student.all, :students_id, :name, {:name => 'students_id[]'}, { multiple: true}, ) %> 
-
-    <%# <%= form.collection_check_boxes(:student, :students_id, Student.all, :id, :name, {:name => 'students_id[]'}) %>
-    
-
-<%# <%= form.select :students_id, @student %> 
-<%# <%= form.collection_select :students, :students_id, Student.all, :id,  {multiple: true} %> 
 <br/>
 
   <div>

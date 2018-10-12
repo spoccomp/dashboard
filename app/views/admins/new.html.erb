@@ -1,14 +1,19 @@
 <h1>Sign Up</h1>
 
-<%= form_with scope: :admins, model: @admin do |form|%>
+<%= form_with model: @admin do |form| %>
+    <%# <%= form_for @admins do |form| %> 
     <div>
         <%= form.label :name %>
-        <%= from.text_field :name %>
+        <%= form.text_field :name %>
     </div>
     <div>
         <%= form.label :email %>
         <%= form.text_field :email%>
     </div>
+    <div>
+    <%= form.label :password %>
+    <%= form.password_field :password %>
+  </div>
     <div>
     <%= form.label :password_confirmation %>
     <%= form.password_field :password_confirmation %>

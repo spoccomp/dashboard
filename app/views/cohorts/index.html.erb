@@ -32,19 +32,18 @@
         <td><%= cohort.cohort_end_date %></td>
         <td><%= cohort.courses_id %></td>
         <td><%= cohort.teachers_id %></td>
-        <%# <td><%= cohort.class_size%>
+        
         <td><%= link_to 'Edit', edit_cohort_path(cohort.id) %></td>
-        <td><%= link_to 'Destroy', cohort_path(cohort.id),
-                method: :delete,
-                data: { confirm: 'Are you sure?' } %></td><br>
+        <td><%= link_to 'Destroy', cohort_path(cohort.id), remote: true, method: :delete, data: { confirm: 'Are you sure?' } %></td><br>
       </tr>
     </table>
     <% end %>
 <% end %>
-
-<%# CohortStudent.where(cohort_id:17) %>
-<table> 
-    <%@costu = CohortStudent.all%>
+<br>
+<br>
+<br>
+<h3>List of Cohorts with all resources</h3>
+<%@costu = CohortStudent.all%>  
     <%@costu.each do |new_class| %>
       <tr>
         <%# <td>Cohort-Name<%=  %></td> 
@@ -55,6 +54,6 @@
         <td>Student-Education: <%= new_class.student.education%></td> 
       </tr><br>
     <% end %>
-</table>
+
 
 

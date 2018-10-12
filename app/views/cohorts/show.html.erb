@@ -22,11 +22,15 @@
 
   <strong>Teacher:</strong>
   <%= @cohort.teachers_id %>  
+
+  <strong>Class size:</strong>
+  <%= @classSize %>
 </div>
-<div>
+
   <h3>List of Cohorts</h3>
-  <table> 
-     
+  
+     <%# <%@costuSize = CohortStudent.all.size%> 
+     <%# theCohort = CohortStudent.where(cohort_id:17) %>
     <%@costu.each do |new_class| %>
       <tr>
         <%# <td>Cohort-Name<%=  %></td> 
@@ -37,7 +41,7 @@
         <td>Student-Education: <%= new_class.student.education%></td> 
       </tr><br>
     <% end %>
-</table><br><br>
-</div>
+<br><br>
+
 
 <%= link_to 'Dashboard', admin_pages_path(@cohort) %>
