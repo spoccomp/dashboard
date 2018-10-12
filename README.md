@@ -1,4 +1,6 @@
-Project Title: Dashboard 
+Project Title:
+Dashboard 
+
 Desciption: 
 This dashboard was developed to be utilized for a school but could be implemented to just about anything that would use a dashboard style application.
 The dashboard provides a secure login to access the application. Once logged in the user/administrator has the abilities to create resources such as students, teahcers, courses and cohorts. Once the resources are established the user/administrator can add resources to the cohort.  The cohort gives the ability to create a class that consists of a teacher, a course, start dates, end dates, and of course students. Each resource can be updated and or deleted.
