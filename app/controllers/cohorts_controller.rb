@@ -99,11 +99,11 @@ class CohortsController < ApplicationController
     @cohort = Cohort.find(params[:id])
     @cohort.destroy
     #whats the point!
-    # respond_to do |format|
-    #   format.html {render redirect_to cohorts_path}
-    #   format.js { render '/cohorts/index.js.erb'}
-    # end
-    redirect_to cohorts_path
+    respond_to do |format|
+      format.html {render redirect_to cohorts_path}
+      format.js { render '/cohorts/index.js.erb'}
+    end
+    # redirect_to cohorts_path
     # redirect_to @cohort
   end
 

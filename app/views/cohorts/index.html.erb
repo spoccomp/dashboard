@@ -24,7 +24,7 @@
   <p>There are <%=@cohort_size%> cohorts listed below:</p>
   <table> 
     <% @cohort.each do |cohort| %>
-      <tr>
+      <tr id="cohort<%= cohort.id %>" >
        <td><%= cohort.id%></td>
        
         <td><%= cohort.cohort_name %></td>
@@ -36,8 +36,9 @@
         <td><%= link_to 'Edit', edit_cohort_path(cohort.id) %></td>
         <td><%= link_to 'Destroy', cohort_path(cohort.id), remote: true, method: :delete, data: { confirm: 'Are you sure?' } %></td><br>
       </tr>
-    </table>
     <% end %>
+        </table>
+
 <% end %>
 <br>
 <br>

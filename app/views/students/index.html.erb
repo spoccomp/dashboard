@@ -21,7 +21,7 @@
 <% else %>
 <% @students.each do |student|%>
 <table>
-<tr>
+<tr id="student<%= student.id %>">
     <td>Student-ID:<%= student.id%> </td><br>
     <td> <%= student.username%> </td>
     <td>First Name: <%= student.first_name%> </td>
@@ -30,7 +30,7 @@
     <td>Education: <%= student.education%> </td>
     <td>Cohort-ID: <%= student.cohort_id%> </td>
     <td><%= link_to 'Edit', edit_student_path(student.id) %></td>
-    <td><%= link_to 'Destroy', student_path(student.id),
+    <td><%= link_to 'Destroy', student_path(student.id), remote: true,
               method: :delete,
               data: { confirm: 'Are you sure?' } %></td><br>
 </tr>

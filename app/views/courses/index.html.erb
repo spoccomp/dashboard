@@ -19,12 +19,12 @@
 <p> There are no teachers currently in the system.</p>
 <% else %>
 <% @courses.each do |course|%>
-<tr>
+<tr id="course<%= course.id %>" >>
     <td>Course-ID: <%= course.id%> </td>
     <td>Course Name: <%= course.course_name%> </td>
     <td>Course Hours: <%= course.course_hours%> </td>
     <td><%= link_to 'Edit', edit_course_path(course.id) %></td>
-    <td><%= link_to 'Destroy', course_path(course.id),
+    <td><%= link_to 'Destroy', course_path(course.id), remote: true,
               method: :delete,
               data: { confirm: 'Are you sure?' } %></td><br>
 </tr>
