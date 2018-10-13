@@ -1,5 +1,5 @@
 
-class CohortStudent < ApplicationController
+class CohortStudentController < ApplicationController
 def new
     @coh_stu = CohortStudent.new
     # @course = Course.all.map{ |c| [ c.course_name, c.id]}
