@@ -80,6 +80,7 @@ test:
 #
 production:
   <<: *default
-  database: pam_dashboard_development
+  url: <%= ENV['DATABASE_URL'] %>
+  # database: pam_dashboard_development
   # username: pam_dashboard
   # password: <%= ENV['PAM_DASHBOARD_DATABASE_PASSWORD'] %>
