@@ -1,6 +1,15 @@
 
 
-<h1>Welcom#index</h1>
+<h1 class="text-center">Administrator Dashboard</h1>
+<hr>
+<%teachTotal = Teacher.all.size%>
+<p>Teachers total: <%=teachTotal%></p>
 
+<%studentTotal = Student.all.size%>
+<p>Students total: <%=studentTotal%></p>
 
+<%courseTotal = Course.all.size%>
+<p>Course total: <%=courseTotal%>
 
+<%cohortTotal = Cohort.all.size%>
+<p>Cohort total: <%=cohortTotal%> </p>

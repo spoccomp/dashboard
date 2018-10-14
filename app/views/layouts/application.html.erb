@@ -44,7 +44,8 @@
    
       <li class="nav-item">
       <%# | <%= link_to 'Home', root_path %> 
-        <a class="nav-link" href=<%= 'Logged in as #{current_user.email}' %> <%= link_to 'Home', root_path %> <%= link_to 'Log Out', logout_path, method: :delete %> </a>
+      <%# <%= "Logged in as #{current_user.email}" %> 
+        <a class="nav-link" href= "/welcoms">Home <%= link_to 'Log Out', logout_path, method: :delete %> </a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="/admin_pages">Administrator</a>

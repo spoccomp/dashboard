@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
         if admin && admin.authenticate(params[:login][:password]) 
           # Save the user.id in that user's session cookie:
           session[:admin_id] = admin.id.to_s
-          redirect_to root_path, notice: 'Successfully logged in!'
+          redirect_to root_path, notice: "#{admin.email} has successfully logged in!"
         else
           # if email or password incorrect, re-render login page:
           flash.now.alert = "Incorrect email or password, try again."
@@ -25,7 +25,7 @@ class SessionsController < ApplicationController
       def destroy
         # delete the saved user_id key/value from the cookie:
         session.delete(:admin_id)
-        redirect_to login_path, notice: "Logged out!"
+        redirect_to login_path, notice: "You have logged out!"
       end
 
 end
