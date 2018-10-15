@@ -1,15 +1,22 @@
-<h1>Student#show</h1>
-<p>Find me in app/views/student/show.html.erb</p>
-
-<tr>
-    <td> <%= @student.id%> </td>
-    <td> <%= @student.username%> </td>
-    <td> <%= @student.first_name%> </td>
-    <td> <%= @student.last_name%> </td>
-    <td> <%= @student.age%> </td>
-    <td> <%= @student.education%> </td><br><br>
-</tr>
-<br>
-<br>
+<h1 class="text-center">View a Student</h1>
+<hr>
+ <div class="container">
+  <div class="row"> 
+      <div class="col-4"> 
+      <div class="card border border-primary rounded" style="width: 18rem;"> 
+       <table>  
+            <tr>
+                <td class="list-group-item">Student-ID: <%= @student.id%> </td>
+                <td class="list-group-item">Student Username: <%= @student.username%> </td>
+                <td class="list-group-item">First Name: <%= @student.first_name%> </td>
+                <td class="list-group-item">Last Name: <%= @student.last_name%> </td>
+                <td class="list-group-item">Age: <%= @student.age%> </td>
+                <td class="list-group-item">Education Level: <%= @student.education%> </td>
+            </tr>
+        </table>
+      </div>
+      </div>
+   </div>
+</div>      
 <br>
 <%= link_to 'Dashboard', admin_pages_path(@students) %>

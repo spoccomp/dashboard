@@ -1,17 +1,26 @@
-<h1>Teacher#show</h1>
-<p>Find me in app/views/teacher/show.html.erb</p>
+<h1 class="text-center">View a Teacher</h1>
+<hr>
+<div class="container">
+  <div class="row"> 
+    <div class="col-4"> 
+     <div class="card border border-primary rounded" style="width: 18rem;"> 
+        <table> 
+            <tr class="list-group">
+                <td class="list-group-item">Teacher-ID: <%= @teacher.id%> </td>
+                <td class="list-group-item">Teacher-Username: <%= @teacher.username%> </td>
+                <td class="list-group-item">First Name: <%= @teacher.first_name%> </td>
+                <td class="list-group-item">Last Name: <%= @teacher.last_name%> </td>
+                <td class="list-group-item">Age: <%= @teacher.age%> </td>
+                <td class="list-group-item">Salary $<%= @teacher.salary%> </td>
+                <td class="list-group-item">Education Level: <%= @teacher.education%> </td>
+            </tr>
+        </table>
+    </div>
+</div>
+</div>
 
-<tr>
-    <td> <%= @teacher.id%> </td>
-    <td> <%= @teacher.username%> </td>
-    <td> <%= @teacher.first_name%> </td>
-    <td> <%= @teacher.last_name%> </td>
-    <td> <%= @teacher.age%> </td>
-    <td> <%= @teacher.salary%> </td>
-    <td> <%= @teacher.education%> </td>
-</tr>
+
 <br>
-<br>
-<br>
+
 <%= link_to 'Dashboard', admin_pages_path(@teachers) %>
 
