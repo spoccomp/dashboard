@@ -1,8 +1,7 @@
 class CohortsController < ApplicationController
   def index
     @cohort = Cohort.all
-    @cohort_size = Cohort.all.size
-    
+    @cohort_size = Cohort.all.size  
   end
 
   def show

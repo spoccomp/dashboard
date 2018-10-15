@@ -17,23 +17,32 @@
 </div>
 <h1>List of Students</h1>
 <% if @students.blank? %>
-<p> There are no students currently in the system.</p>
+  <p> There are no students currently in the system.</p>
 <% else %>
+<div class="container">
+<div class="row"> 
 <% @students.each do |student|%>
-<table>
-<tr id="student<%= student.id %>">
-    <td>Student-ID:<%= student.id%> </td><br>
-    <td> <%= student.username%> </td>
-    <td>First Name: <%= student.first_name%> </td>
-    <td>Last Name: <%= student.last_name%> </td>
-    <td>Age: <%= student.age%> </td>
-    <td>Education: <%= student.education%> </td>
-    <td>Cohort-ID: <%= student.cohort_id%> </td>
-    <td><%= link_to 'Edit', edit_student_path(student.id) %></td>
-    <td><%= link_to 'Destroy', student_path(student.id), remote: true,
-              method: :delete,
-              data: { confirm: 'Are you sure?' } %></td><br>
-</tr>
+    <div class="col-4">
+        <div class="card border border-primary rounded" style="width: 18rem;">
+        <table>
+          <tr id="student<%= student.id %>" class="list-group">
+            <td class="list-group-item">Student-ID: <%= student.id%> </td><br>
+            <td class="list-group-item">Student-Username: <%= student.username%> </td>
+            <td class="list-group-item">First Name: <%= student.first_name%> </td>
+            <td class="list-group-item">Last Name: <%= student.last_name%> </td>
+            <td class="list-group-item">Age: <%= student.age%> </td>
+            <td class="list-group-item">Education: <%= student.education%> </td>
+            <td class="list-group-item">Cohort-ID: <%= student.cohort_id%> </td>
+            <td><%= link_to 'Edit', edit_student_path(student.id) %></td>
+            <td><%= link_to 'Destroy', student_path(student.id), remote: true,
+                method: :delete,
+                data: { confirm: 'Are you sure?' } %></td><br>
+          </tr>
+        </table>
+        </div>
+      </div>
+      <% end %>
+    </div>
+    
+  </div>
 <% end %>
-<% end %>
-</table>

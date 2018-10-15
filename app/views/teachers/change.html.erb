@@ -2,20 +2,31 @@
 <% if @teachers.blank? %>
 <p> There are no teachers currently in the system.</p>
 <% else %>
+<div class="container">
+<div class="row"> 
 <% @teachers.each do |teacher|%>
-<tr id="teacher<%= teacher.id %>">
-    <td> <%= teacher.id%> </td>
-    <td> <%= teacher.username%> </td>
-    <td> <%= teacher.first_name%> </td>
-    <td> <%= teacher.last_name%> </td>
-    <td> <%= teacher.age%> </td>
-    <td> <%= teacher.salary%> </td>
-    <td> <%= teacher.education%> </td>
-    <td><%= link_to 'Edit', edit_teacher_path(teacher.id) %></td>
-    <td><%= link_to 'Destroy', teacher_path(teacher.id), remote: true,
-              method: :delete,
-              data: { confirm: 'Are you sure?' } %></td><br>
-</tr>
-<% end %>
+    <div class="col-4"> 
+    <div class="card border border-primary rounded" style="width: 18rem;">
+    <table>
+        <tr id="teacher<%= teacher.id %>" class="list-group">
+        <td class="list-group-item">Teacher-ID: <%= teacher.id%> </td>
+        <td class="list-group-item">Teacher-Username: <%= teacher.username%> </td>
+        <td class="list-group-item">First Name: <%= teacher.first_name%> </td>
+        <td class="list-group-item">Last Name: <%= teacher.last_name%> </td>
+        <td class="list-group-item">Age: <%= teacher.age%> </td>
+        <td class="list-group-item">Salary: $<%= teacher.salary%> </td>
+        <td class="list-group-item">Education: <%= teacher.education%> </td>
+        <td><%= link_to 'Edit', edit_teacher_path(teacher.id) %></td>
+        <td><%= link_to 'Destroy', teacher_path(teacher.id), remote: true,
+                method: :delete,
+                data: { confirm: 'Are you sure?' } %></td><br>
+        </tr>
+        </table>
+        </div>
+      </div>
+      <% end %>
+    </div>
+    
+  </div>
 <% end %>
 <%= link_to 'Dashboard', admin_pages_path(@teachers) %>

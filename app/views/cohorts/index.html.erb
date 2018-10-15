@@ -8,53 +8,76 @@
 
 <div class="container">
   <div class="row">
-   <ul class="nav nav-tabs">
-  <li class="nav-item">
-    <p class="nav-link "> <%= link_to "Create", new_cohort_path %></p>
-  </li>
-  </ul>
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <p class="nav-link "> <%= link_to "Create", new_cohort_path %></p>
+        </li>
+    </ul>
   </div>
  </div>
 <h1>Cohort Listing</h1>
+<p>There are <%=@cohort_size%> cohorts listed below:</p>
 <% if @cohort.blank? %>
   <p> There are no cohorts currently in the system.</p>
   <% else %>
-
- 
-  <p>There are <%=@cohort_size%> cohorts listed below:</p>
-  <table> 
-    <% @cohort.each do |cohort| %>
-      <tr id="cohort<%= cohort.id %>" >
-       <td><%= cohort.id%></td>
-       
-        <td><%= cohort.cohort_name %></td>
-        <td><%= cohort.cohort_start_date %></td>
-        <td><%= cohort.cohort_end_date %></td>
-        <td><%= cohort.courses_id %></td>
-        <td><%= cohort.teachers_id %></td>
-        
-        <td><%= link_to 'Edit', edit_cohort_path(cohort.id) %></td>
-        <td><%= link_to 'Destroy', cohort_path(cohort.id), remote: true, method: :delete, data: { confirm: 'Are you sure?' } %></td><br>
-      </tr>
-    <% end %>
-        </table>
-
+  <div class="container">
+  <div class="row"> 
+  <% @cohort.each do |cohort| %>
+     <div class="col-4"> 
+     <div class="card border border-primary rounded" style="width: 18rem;"> 
+     <table> 
+        <tr id="cohort<%= cohort.id %>" class="list-group">
+          <td class="list-group-item">Cohort-ID: <%= cohort.id%></td>
+          <td class="list-group-item">Cohort Name: <%= cohort.cohort_name %></td>
+          <td class="list-group-item">Start-date: <%= cohort.cohort_start_date %></td>
+          <td class="list-group-item">End-date: <%= cohort.cohort_end_date %></td>
+          <td class="list-group-item">Course-ID: <%= cohort.courses_id %></td>
+          <td class="list-group-item">Teacher-ID: <%= cohort.teachers_id %></td>   
+          <td><%= link_to 'Edit', edit_cohort_path(cohort.id) %></td>
+          <td><%= link_to 'Destroy', cohort_path(cohort.id), remote: true, method: :delete, data: { confirm: 'Are you sure?' } %></td><br>
+        </tr>
+         </table>
+        </div>
+      </div>
+      <% end %>
+    </div>
+    
+  </div>
 <% end %>
 <br>
 <br>
 <br>
 <h3>List of Cohorts with all resources</h3>
-<%@costu = CohortStudent.all%>  
+<%@costu = CohortStudent.all%>
+ 
     <%@costu.each do |new_class| %>
-      <tr>
-        <%# <td>Cohort-Name<%=  %></td> 
-        <td>Cohort-ID: <%= new_class.cohort_id %></td>
-        <td>Student-ID: <%= new_class.student_id %></td>  
-        <td>Student-Name: <%=  new_class.student.first_name%> <%=  new_class.student.last_name%></td>
-        <td>Student-Age: <%= new_class.student.age %></td>  
-        <td>Student-Education: <%= new_class.student.education%></td> 
-      </tr><br>
-    <% end %>
+      <table class="table table-light table-bordered table-hover">
+        <thead class="thead-light">
+          <tr>
+            <th scope="col">Cohort-ID</th>
+            <th scope="col">Cohort-Name</th>
+            <th scope="col">Student-ID</th>
+            <th scope="col">Student Name</th>
+            <th scope="col">Student Age </th>
+            <th scope="col">Student Education</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+              <td> <%= new_class.cohort_id %></td>
+              <td> <%= new_class.cohort.cohort_name %> </td>
+              
+              <td> <%= new_class.student_id %></td>  
+              <td> <%=  new_class.student.first_name%> <%=  new_class.student.last_name%></td>
+              <td> <%= new_class.student.age %></td>  
+              <td> <%= new_class.student.education%></td> 
+              
+          </tr>
+        
+        </tbody>
+     </table>
+      
+<% end %>
 
 
 

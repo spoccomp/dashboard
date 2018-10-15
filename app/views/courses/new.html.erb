@@ -3,12 +3,12 @@
 
 
 <%= form_with scope: :course, model: @course, local: true do |form| %>
-  <div>
+  <div class="form-group">
     <%= form.label :course_name %><br>
     <%= form.text_field :course_name  %>
   </div>
  
-  <div>
+  <div class="form-group">
     <%= form.label :course_hours  %><br>
      <%= @course.errors.full_messages_for(:course_hours) if @course.errors.include?(:course_hours) %>
      <%= form.text_field :course_hours%>
