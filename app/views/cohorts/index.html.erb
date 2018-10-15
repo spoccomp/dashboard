@@ -16,6 +16,9 @@
   </div>
  </div>
 <h1>Cohort Listing</h1>
+<strong>Instructions:</strong>
+<strong>To add students, please create a cohort or edit an existing cohort to add students or edit the cohort</strong>
+<br><br>
 <p>There are <%=@cohort_size%> cohorts listed below:</p>
 <% if @cohort.blank? %>
   <p> There are no cohorts currently in the system.</p>
@@ -33,7 +36,7 @@
           <td class="list-group-item">End-date: <%= cohort.cohort_end_date %></td>
           <td class="list-group-item">Course-ID: <%= cohort.courses_id %></td>
           <td class="list-group-item">Teacher-ID: <%= cohort.teachers_id %></td>   
-          <td><%= link_to 'Edit', edit_cohort_path(cohort.id) %></td>
+          <td><%= link_to 'Edit-Add Students', edit_cohort_path(cohort.id) %></td>
           <td><%= link_to 'Destroy', cohort_path(cohort.id), remote: true, method: :delete, data: { confirm: 'Are you sure?' } %></td><br>
         </tr>
          </table>
