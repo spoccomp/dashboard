@@ -32,7 +32,8 @@
             <td class="list-group-item">Last Name: <%= student.last_name%> </td>
             <td class="list-group-item">Age: <%= student.age%> </td>
             <td class="list-group-item">Education: <%= student.education%> </td>
-            <td class="list-group-item">Cohort-ID: <%= student.cohort_id%> </td>
+            <%# <td class="list-group-item">Cohort-ID: <%= student.cohort_id%> </td> %>
+            
             <td><%= link_to 'Edit', edit_student_path(student.id) %></td>
             <td><%= link_to 'Destroy', student_path(student.id), remote: true,
                 method: :delete,

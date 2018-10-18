@@ -10,7 +10,7 @@ class CreateCohorts < ActiveRecord::Migration[5.2]
       # this is to create a foreign key
       t.references :teachers
       t.references :students
-      t.references :cohorts
+     
     end
   end
 end

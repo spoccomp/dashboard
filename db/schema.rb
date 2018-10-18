@@ -47,8 +47,6 @@ ActiveRecord::Schema.define(version: 2018_10_10_212654) do
     t.datetime "updated_at"
     t.bigint "teachers_id"
     t.bigint "students_id"
-    t.bigint "cohorts_id"
-    t.index ["cohorts_id"], name: "index_cohorts_on_cohorts_id"
     t.index ["students_id"], name: "index_cohorts_on_students_id"
     t.index ["teachers_id"], name: "index_cohorts_on_teachers_id"
   end
