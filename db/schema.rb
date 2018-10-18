@@ -45,9 +45,12 @@ ActiveRecord::Schema.define(version: 2018_10_10_212654) do
     t.date "cohort_end_date"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer "courses_id", limit: 2
-    t.integer "teachers_id", limit: 2
-    t.integer "class_size"
+    t.bigint "teachers_id"
+    t.bigint "students_id"
+    t.bigint "cohorts_id"
+    t.index ["cohorts_id"], name: "index_cohorts_on_cohorts_id"
+    t.index ["students_id"], name: "index_cohorts_on_students_id"
+    t.index ["teachers_id"], name: "index_cohorts_on_teachers_id"
   end
 
   create_table "courses", force: :cascade do |t|
@@ -57,7 +60,7 @@ ActiveRecord::Schema.define(version: 2018_10_10_212654) do
     t.datetime "updated_at"
   end
 
-  create_table "educations", id: :bigint, default: -> { "nextval('education_id_seq'::regclass)" }, force: :cascade do |t|
+  create_table "education_levels", force: :cascade do |t|
     t.text "education"
   end
 
@@ -91,10 +94,9 @@ ActiveRecord::Schema.define(version: 2018_10_10_212654) do
     t.text "first_name"
     t.text "last_name"
     t.integer "age"
+    t.text "education"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.text "education"
-    t.integer "cohort_id", limit: 2
   end
 
   create_table "teachers", force: :cascade do |t|
@@ -124,7 +126,4 @@ ActiveRecord::Schema.define(version: 2018_10_10_212654) do
 
   add_foreign_key "cohort_students", "cohorts"
   add_foreign_key "cohort_students", "students"
-  add_foreign_key "cohorts", "courses", column: "courses_id", name: "cohorts_courses_id_fkey"
-  add_foreign_key "cohorts", "teachers", column: "teachers_id", name: "cohorts_teachers_id_fkey"
-  add_foreign_key "students", "cohorts", name: "students_cohort_id_fkey"
 end

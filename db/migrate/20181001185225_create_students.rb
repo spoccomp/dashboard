@@ -6,7 +6,7 @@ class CreateStudents < ActiveRecord::Migration[5.2]
         t.text :first_name 
         t.text :last_name 
         t.integer :age 
-        t.references :educations
+        t.text :education
         t.timestamp :created_at 
         t.timestamp :updated_at 
         # this is to create a foreign key
