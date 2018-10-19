@@ -1,12 +1,12 @@
 class CreateStudents < ActiveRecord::Migration[5.2]
   def change
     create_table :students do |t|
-        t.text :username 
-        t.text :password 
-        t.text :first_name 
-        t.text :last_name 
+        t.string :username 
+        t.string :password 
+        t.string :first_name 
+        t.string :last_name 
         t.integer :age 
-        t.text :education
+        t.string :education
         t.timestamp :created_at 
         t.timestamp :updated_at 
         # this is to create a foreign key

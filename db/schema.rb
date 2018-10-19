@@ -40,14 +40,14 @@ ActiveRecord::Schema.define(version: 2018_10_10_212654) do
   end
 
   create_table "cohorts", force: :cascade do |t|
-    t.text "cohort_name"
+    t.string "cohort_name"
     t.date "cohort_start_date"
     t.date "cohort_end_date"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.bigint "teachers_id"
-    t.bigint "students_id"
-    t.index ["students_id"], name: "index_cohorts_on_students_id"
+    t.bigint "courses_id"
+    t.index ["courses_id"], name: "index_cohorts_on_courses_id"
     t.index ["teachers_id"], name: "index_cohorts_on_teachers_id"
   end
 
@@ -87,24 +87,24 @@ ActiveRecord::Schema.define(version: 2018_10_10_212654) do
   end
 
   create_table "students", force: :cascade do |t|
-    t.text "username"
-    t.text "password"
-    t.text "first_name"
-    t.text "last_name"
+    t.string "username"
+    t.string "password"
+    t.string "first_name"
+    t.string "last_name"
     t.integer "age"
-    t.text "education"
+    t.string "education"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "teachers", force: :cascade do |t|
-    t.text "username"
-    t.text "password"
-    t.text "first_name"
-    t.text "last_name"
+    t.string "username"
+    t.string "password"
+    t.string "first_name"
+    t.string "last_name"
     t.integer "age"
     t.money "salary", scale: 2
-    t.text "education"
+    t.string "education"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
