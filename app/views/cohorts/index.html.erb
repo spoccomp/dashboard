@@ -34,14 +34,18 @@
           <td class="list-group-item">Cohort Name: <%= cohort.cohort_name %></td>
           <td class="list-group-item">Start-date: <%= cohort.cohort_start_date %></td>
           <td class="list-group-item">End-date: <%= cohort.cohort_end_date %></td>
-          <td class="list-group-item">Course-ID: <%= cohort.courses_id %></td>
-          <td class="list-group-item">Teacher-ID: <%= cohort.teachers_id %></td>   
-          <td><%= link_to 'Edit-Add Students', edit_cohort_path(cohort.id) %></td>
-          <td><%= link_to 'Destroy', cohort_path(cohort.id), remote: true, method: :delete, data: { confirm: 'Are you sure?' } %></td><br>
+          <% if cohort.courses_id.blank? %>
+            <p> There is no course id yet.</p>
+            <td class="list-group-item">Course-ID: <%= cohort.courses_id %></td>
+          <%else%>
+            <td class="list-group-item">Teacher-ID: <%= cohort.teachers_id %></td>   
+            <td><%= link_to 'Edit-Add Students', edit_cohort_path(cohort.id) %></td>
+            <td><%= link_to 'Destroy', cohort_path(cohort.id), remote: true, method: :delete, data: { confirm: 'Are you sure?' } %></td><br>
         </tr>
          </table>
         </div>
       </div>
+      <% end %>
       <% end %>
     </div>
     
