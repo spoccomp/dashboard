@@ -36,7 +36,8 @@
   </div>
   <div>
     <%= form.label :education %><br>
-     <%= form.text_field :education %>
+    <%= form.select(:education, options_for_select([['High School'], ['College'], ['Masters'], ['PHD']]), { include_blank: true }) %>
+     <%# <%= form.text_field :education %> 
   </div>
   <div>
     <%= form.submit %>
